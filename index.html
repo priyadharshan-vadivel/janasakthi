@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Janasakthi – India’s First Citizen Connect ERP | Kerala</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fefaf5;
+      color: #1e2a3a;
+    }
+
+    :root {
+      --kerala-saffron: #FF8C42;
+      --kerala-green: #2E7D32;
+      --kerala-blue: #1E3A5F;
+      --bg-light: #FFF8F0;
+      --card-white: #ffffff;
+      --border-soft: #f0e2d0;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    .header {
+      background: white;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      flex-wrap: wrap;
+    }
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--kerala-saffron), var(--kerala-green));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .logo p {
+      font-size: 0.75rem;
+      color: #5a6e7a;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2c3e4e;
+    }
+    .app-badge {
+      background: var(--kerala-blue);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(100deg, #fff6ed 0%, #ffffff 100%);
+      padding: 48px 0 32px;
+    }
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-left {
+      flex: 1.2;
+    }
+    .hero-badge {
+      background: var(--kerala-saffron);
+      display: inline-block;
+      padding: 4px 16px;
+      border-radius: 40px;
+      color: white;
+      font-weight: 600;
+      font-size: 0.8rem;
+      margin-bottom: 20px;
+    }
+    .hero-left h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      color: #1f2f3e;
+    }
+    .hero-left h1 span {
+      color: var(--kerala-green);
+    }
+    .hero-left p {
+      font-size: 1.1rem;
+      color: #2c3e50;
+      margin-bottom: 24px;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 28px;
+      margin: 28px 0;
+      flex-wrap: wrap;
+    }
+    .stat {
+      background: white;
+      border-radius: 32px;
+      padding: 12px 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      text-align: center;
+      min-width: 110px;
+    }
+    .stat-num {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--kerala-blue);
+    }
+    .hero-right {
+      flex: 0.8;
+      text-align: center;
+    }
+    .hero-right img {
+      max-width: 100%;
+      height: auto;
+      /* Transparent cutout: drop-shadow follows its shape, a box-shadow/border would frame it in a rectangle. */
+      filter: drop-shadow(0 18px 24px rgba(0,0,0,0.12));
+    }
+    .cm-caption {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #4a5b6e;
+    }
+
+    /* Section headers */
+    .section-title {
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin: 48px 0 16px 0;
+    }
+    .section-sub {
+      color: #4b5e6c;
+      margin-bottom: 32px;
+      font-size: 1rem;
+    }
+
+    /* Cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      margin: 32px 0;
+    }
+    .card {
+      background: var(--card-white);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+      border: 1px solid var(--border-soft);
+      transition: all 0.2s;
+    }
+    .card i {
+      font-size: 2rem;
+      color: var(--kerala-saffron);
+      margin-bottom: 16px;
+    }
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+    .scheme-highlight {
+      background: #eef5e8;
+      border-left: 5px solid var(--kerala-green);
+    }
+
+    /* Scheme banner */
+    .scheme-banner {
+      background: linear-gradient(115deg, #1e3a5f 0%, #1a4a6f 100%);
+      border-radius: 32px;
+      padding: 40px;
+      color: white;
+      margin: 48px 0;
+    }
+    .scheme-banner h3 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+    .scheme-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .scheme-tag {
+      background: rgba(255,255,255,0.2);
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+    }
+
+    /* Volunteer tree detailed */
+    .volunteer-tree {
+      background: #F3EFE7;
+      border-radius: 32px;
+      padding: 32px;
+      margin: 40px 0;
+    }
+    .tree-levels {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .level {
+      flex: 1;
+      min-width: 140px;
+      background: white;
+      border-radius: 24px;
+      padding: 16px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .level strong {
+      display: block;
+      font-size: 1.1rem;
+      color: var(--kerala-blue);
+      margin-bottom: 8px;
+    }
+    .level span {
+      font-size: 0.8rem;
+      color: #4b5e6c;
+    }
+
+    .app-download {
+      background: var(--bg-light);
+      border-radius: 32px;
+      padding: 32px;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    footer {
+      background: #0f1f2c;
+      color: #b9cddf;
+      padding: 40px 0 20px;
+      margin-top: 48px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+      gap: 28px;
+    }
+    @media (max-width: 700px) {
+      .hero-left h1 { font-size: 2rem; }
+      .nav-links { gap: 16px; margin-top: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="container nav">
+    <div class="logo">
+      <h1>ജനശക്തി</h1>
+      <p>India's First Citizen-Connect ERP</p>
+    </div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Connect with Leader</a>
+      <a href="#">Schemes</a>
+      <a href="#">Grievance</a>
+      <a href="#" class="app-badge"><i class="fab fa-android"></i> <i class="fab fa-apple"></i> Get App</a>
+    </div>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-left">
+      <div class="hero-badge"><i class="fas fa-users"></i> Direct Jan-Darshan</div>
+      <h1>Every Citizen <span>Directly Connected</span> to Every Leader – from Panchayat to Chief Minister</h1>
+      <p>Janasakthi is a revolutionary people's platform. Not a government website – but a direct channel to reach your MLA, Minister, or CM, track your grievance, know which schemes you qualify for, and hold your representative accountable.</p>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">14</div><div>Districts Live</div></div>
+        <div class="stat"><div class="stat-num">140+</div><div>MLAs / MPs Connected</div></div>
+        <div class="stat"><div class="stat-num">8.2L</div><div>Citizens Registered</div></div>
+      </div>
+      <div style="margin-top: 12px;"><i class="fas fa-check-circle" style="color: var(--kerala-green);"></i> 100% free for every citizen of Kerala</div>
+    </div>
+    <div class="hero-right">
+      <!-- CM Picture: cm-vd-satheesan.png sits beside this file -->
+      <img src="cm-vd-satheesan.png" width="609" height="632" alt="Chief Minister V. D. Satheesan">
+      <div class="cm-caption">Chief Minister V. D. Satheesan launching Janasakthi – a direct channel for every family</div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <!-- Key benefits for citizens -->
+  <div class="section-title">How Janasakthi works for you</div>
+  <div class="card-grid">
+    <div class="card"><i class="fas fa-comment-dots"></i><h3>Talk to your leader directly</h3><p>Select your constituency – send a message or voice note to your MLA, district panchayat president, or CM. Get a unique tracking ID.</p></div>
+    <div class="card"><i class="fas fa-tasks"></i><h3>Track every complaint</h3><p>Your grievance moves through the system: Received → Assigned to volunteer → Escalated to department → Resolved. You get SMS/WhatsApp updates.</p></div>
+    <div class="card"><i class="fas fa-star"></i><h3>Rate your representative</h3><p>After resolution, rate your MLA/minister privately. Leadership uses this to improve performance – and you remain anonymous.</p></div>
+    <div class="card"><i class="fas fa-chart-line"></i><h3>Promise tracker</h3><p>See what your local candidate promised before election – and what has been delivered. Complete public transparency.</p></div>
+  </div>
+
+  <!-- Scheme Benefits -->
+  <div class="scheme-banner">
+    <h3><i class="fas fa-hand-holding-heart"></i> Scheme Sahayak – Your Personal Scheme Assistant</h3>
+    <p>No more wondering which government scheme you qualify for. Janasakthi’s AI engine scans your family profile (income, occupation, land, etc.) and shows you exactly which central & state schemes you can benefit from – with direct application link.</p>
+    <div class="scheme-list">
+      <span class="scheme-tag">PM-KISAN (₹6,000/yr)</span>
+      <span class="scheme-tag">Karunya Health Scheme</span>
+      <span class="scheme-tag">Vayomithram Pension</span>
+      <span class="scheme-tag">Mudra Loan</span>
+      <span class="scheme-tag">Awas Yojana</span>
+      <span class="scheme-tag">Kerala Farmer Distress Package</span>
+    </div>
+    <div style="margin-top: 24px;"><a href="#" style="color:white; text-decoration:underline;">Check your eligibility now →</a></div>
+  </div>
+
+  <!-- Detailed Volunteer Management Tree (expanded) -->
+  <div class="volunteer-tree">
+    <h3><i class="fas fa-tree"></i> Volunteer Management Tree – How your issue reaches the right person</h3>
+    <p>Janasakthi is powered by a structured volunteer network that ensures no citizen is left unattended. Every family is linked to a local volunteer, and every grievance automatically climbs the hierarchy if unresolved.</p>
+    <div class="tree-levels">
+      <div class="level"><strong>Booth Volunteer</strong><span>Assigned to 50 families. Collects issues, updates family data, forwards urgent matters.</span></div>
+      <div class="level"><strong>Ward President</strong><span>Manages 5-10 booths. Monitors pending complaints, coordinates with local body.</span></div>
+      <div class="level"><strong>Block President</strong><span>Oversees 20-30 wards. Reviews unresolved grievances, escalates to MLA.</span></div>
+      <div class="level"><strong>District President</strong><span>Aggregates data for all blocks. Flags systemic issues to district administration.</span></div>
+      <div class="level"><strong>State Leadership</strong><span>MLAs, Ministers, and CM see dashboards – real‑time status of every pending grievance across Kerala.</span></div>
+    </div>
+    <p style="margin-top: 20px; font-size: 0.9rem;"><i class="fas fa-users"></i> <strong>45,000+ trained volunteers</strong> | Each volunteer gets a mobile app to manage families, submit reports, and receive alerts.</p>
+  </div>
+
+  <!-- Removed Digital Campaign War Room, keeping only citizen-facing tools -->
+  <div class="card-grid">
+    <div class="card scheme-highlight"><i class="fas fa-microphone-alt"></i><h3>Speech & Debate Assistant</h3><p>All speeches by your leader in Assembly/Parliament are logged. AI fact‑checks opposition claims in real time. Citizens can see “promises made vs done”.</p></div>
+    <div class="card scheme-highlight"><i class="fas fa-people-arrows"></i><h3>Family Data & Scheme Eligibility</h3><p>Each family’s employment, education, and scheme status is updated by the assigned volunteer – helping leaders target welfare accurately.</p></div>
+  </div>
+
+  <!-- App download -->
+  <div class="app-download">
+    <h3>Download Janasakthi App</h3>
+    <p>Available on Android & iOS – Connect with your CM, MLA, and local representative in two clicks.</p>
+    <div style="margin-top: 20px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height: 48px; margin: 0 8px;">
+      <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-example-preferred_2x.png" alt="App Store" style="height: 48px; margin: 0 8px;">
+    </div>
+    <p style="margin-top: 16px; font-size: 0.8rem;">🔒 Your data is safe – hosted on Kerala servers, protected by India’s data laws</p>
+  </div>
+</div>
+
+<footer>
+  <div class="container footer-grid">
+    <div><strong>Janasakthi – People's ERP</strong><br>Under the vision of Chief Minister V. D. Satheesan</div>
+    <div><strong>For Citizens</strong><br>Grievance · Schemes · Ratings · Promise tracker</div>
+    <div><strong>Developed by</strong><br>Dexin Prime Technologies Pvt Ltd<br>.NET Core | React Native</div>
+    <div><strong>Helpline</strong><br>1800-425-1001 (24x7)<br>support@janasakthi.kerala.gov.in</div>
+  </div>
+  <div class="container" style="text-align: center; margin-top: 32px; font-size: 0.75rem;">© 2025 – India’s first direct citizen-representative governance ERP | Kerala Model</div>
+</footer>
+
+</body>
+</html>
